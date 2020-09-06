@@ -203,6 +203,36 @@ p {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
 /* section */
 
 .section-advantage {
@@ -293,12 +323,42 @@ img {
 }
 
 .flex-item {
+  position: relative;
   width: 370;
   margin-right: 30px;
 }
 
 .flex-item:nth-child(3n) {
   margin-right: 0;
+}
+
+.img-thumb {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 24%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  /* outline: 1px solid black; */
+  opacity: 1;
+}
+
+.p-thumb {
+  margin-top: 27px;
+  margin-bottom: 27px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #eeeeee;
 }
 
 .section-group .section-heading {
@@ -621,6 +681,24 @@ address {
 .cards {
   display: flex;
   flex-wrap: wrap;
+}
+
+.product-thumb:hover::before {
+  opacity: 0.5;
+}
+
+.product-thumb {
+  position: relative;
+}
+
+.product-thumb::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  opacity: 0;
 }
 
 .inscription {
