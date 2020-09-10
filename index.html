@@ -69,32 +69,6 @@
             Заказать услугу
           </button>
         </div>
-        <div class="backdrop is-hidden" data-modal>
-          <div class="modal">
-            <button type="button" class="butclose-icon" data-modal-close>
-              <svg class="close-icon">
-                <use href="./img/icons/sprite.svg#icon-close"></use>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <script>
-          (() => {
-            const refs = {
-              openModalBtn: document.querySelector('[data-modal-open]'),
-              closeModalBtn: document.querySelector('[data-modal-close]'),
-              modal: document.querySelector('[data-modal]'),
-            };
-
-            refs.openModalBtn.addEventListener('click', toggleModal);
-            refs.closeModalBtn.addEventListener('click', toggleModal);
-
-            function toggleModal() {
-              refs.modal.classList.toggle('is-hidden');
-            }
-          })();
-        </script>
       </section>
 
       <section class="section-advantage">
@@ -504,5 +478,32 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="butclose-icon" data-modal-close>
+          <svg class="close-icon">
+            <use href="./img/icons/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const refs = {
+          openModalBtn: document.querySelector('[data-modal-open]'),
+          closeModalBtn: document.querySelector('[data-modal-close]'),
+          modal: document.querySelector('[data-modal]'),
+        };
+
+        refs.openModalBtn.addEventListener('click', toggleModal);
+        refs.closeModalBtn.addEventListener('click', toggleModal);
+
+        function toggleModal() {
+          refs.modal.classList.toggle('is-hidden');
+        }
+      })();
+    </script>
   </body>
 </html>
